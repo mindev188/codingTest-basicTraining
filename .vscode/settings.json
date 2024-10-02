@@ -1,5 +1,7 @@
 {
-    "java.project.sourcePaths": ["src/240930"],
+    "java.project.sourcePaths": [
+        "src/stepTwo"
+    ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
