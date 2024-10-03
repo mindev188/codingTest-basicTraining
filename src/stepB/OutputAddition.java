@@ -1,3 +1,4 @@
+package stepB;
 import java.util.Scanner;
 import java.lang.StringBuilder;
 

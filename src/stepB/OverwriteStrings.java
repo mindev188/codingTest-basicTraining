@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package stepB;
 
 /**
  * Title : 문자열 겹쳐쓰기

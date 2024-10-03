@@ -1,4 +1,7 @@
+package stepB;
+
 import java.util.Scanner;
+
 
 /**
  * Title : 홀짝 구분하기
