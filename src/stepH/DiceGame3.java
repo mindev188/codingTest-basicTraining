@@ -1,5 +1,6 @@
 package stepH;
 
+import java.util.Arrays;
 /**
  * 문제 설명
  * 1부터 6까지 숫자가 적힌 주사위가 네 개 있습니다. 네 주사위를 굴렸을 때 나온 숫자에 따라 다음과 같은 점수를 얻습니다.
@@ -41,16 +42,66 @@ public class DiceGame3 {
 
     public static void main(String[] args) {
         System.out.println(solution(2, 2, 2, 2));
+        System.out.println(solution(4, 1, 4, 4));
+        System.out.println(solution(6, 3, 3, 6));
+        System.out.println(solution(2, 5, 2, 6));
     }
 
     private static int solution(int a, int b, int c, int d) {
         int answer = 0;
+
         // 네 숫자가 모두 같은 경우
         // 세 숫자가 모두 같은 경우
         // 두 숫자씩 모두 같은 경우
         // 두 숫자가 같은 경우
         // 모두 다른 경우
 
+        // 값을 정렬하면 쉽게 구분할 수 있다.
+        int[] dice = { a, b, c, d};
+        Arrays.sort(dice);
+
+        if (dice[0] == dice[3]) {
+            answer = dice[0] * 1111;
+        } else if (dice[0] == dice[2] || dice[1] == dice[3]) {
+            answer = (int) Math.pow(10 * dice[1] + (dice[0] + dice[3] - dice[1]), 2);
+        } else if (dice[0] == dice[1] && dice[2] == dice[3]) {
+            answer = (dice[0] + dice[2]) * Math.abs(dice[0] - dice[2]);
+        } else if (dice[0] == dice[1]) {
+            answer = dice[2] * dice[3];
+        } else if (dice[1] == dice[2]) {
+            answer = dice[0] * dice[3];
+        } else if (dice[2] == dice[3]) {
+            answer = dice[0] * dice[1];
+        } else {
+            answer = dice[0];
+        }
+
+        /**
+         * Other Code
+         * Map 을 사용한 코드
+         * Map<Integer, Integer> map = new HashMap<>();
+         * map.put(a, map.getOrDefault(a, 0) + 1);
+         * map.put(b, map.getOrDefault(b, 0) + 1);
+         * map.put(c, map.getOrDefault(c, 0) + 1);
+         * map.put(d, map.getOrDefault(d, 0) + 1);
+         * if (map.size() == 1) return a * 1111;
+         * if (map.size() == 2) {
+         *      if (map.containsValue(3)) {
+         *          for (Map.Entry<Integer, Integer> el : map.entrySet())
+         *              answer += el.getKey() * (el.getValue() == 3 ? 10 : 1);
+         *          return answer * answer;
+         *      }
+         *      int x = (a + b + c + d - 2 * a) / 2;
+         *      return (a + x) * Math.abs(a - x);
+         * }
+         * if (map.size() == 3) {
+         *      answer = 1;
+         *      for (Map.Entry<Integer, Integer> el : map.entrySet())
+         *          if (el.getValue() != 2) answer *= el.getKey();
+         *      return answer;
+         * }
+         * return Math.min(Math.min(a, b), Math.min(c, d));
+         */
         return answer;
     }
 }
