@@ -1,4 +1,4 @@
-package stepC;
+package stepH;
 
 /**
  * 문제 설명
