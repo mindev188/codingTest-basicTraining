@@ -37,6 +37,7 @@ public class DistinguishingOddAndEven {
         } else {
             System.out.println(n + " is odd");
         }
+        sc.close();
     }
 
 }
