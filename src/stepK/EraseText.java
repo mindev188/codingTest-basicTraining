@@ -41,7 +41,7 @@ public class EraseText {
         return answer;
     }
 
-        private static String before_solution(String my_string, int[] indices) {
+        private String before_solution(String my_string, int[] indices) {
         String answer = "";
         //  my_string에서 indices 인덱스에 해당하는 문자를 제거하지만 해당 인덱스는 my_string에 대한 인덱스만을 기준으로 하기 때문에 주의해야 한다.
         // 때문에 해당 인덱스에 일치하는 문자를 공백으로 추가 한후, 공백을 제거한다.

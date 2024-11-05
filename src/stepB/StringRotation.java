@@ -30,6 +30,7 @@ public class StringRotation {
             char b = a.charAt(i);
             System.out.println(b);
         }
+        sc.close();
     }
 
 }

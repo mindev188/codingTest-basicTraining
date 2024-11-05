@@ -23,6 +23,6 @@ public class OutputString {
         /* 문제 풀이 */
         // >> 공백도 아닌 값이 한줄로만 출력되므로 Syso로 출력만 한다
         System.out.println(a);
-
+        sc.close();
     }
 }

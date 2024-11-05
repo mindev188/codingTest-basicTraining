@@ -24,5 +24,6 @@ public class OutputAAndB {
         // System.out.println(a + b);
         System.out.println("a = " + a);
         System.out.println("b = " + b);
+        sc.close();
     }
 }

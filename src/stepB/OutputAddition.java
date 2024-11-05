@@ -28,6 +28,7 @@ public class OutputAddition {
          StringBuilder msg = new StringBuilder();
          msg.append(a).append(" + ").append(b).append(" = ").append(a + b);
          System.out.println(msg.toString());
+        sc.close();
     }
 
 }

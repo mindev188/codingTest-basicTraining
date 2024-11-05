@@ -1,6 +1,5 @@
 package stepL;
 
-import java.util.Arrays;
 /**
  * 문제 설명
  * 정수 배열 arr와 2개의 구간이 담긴 배열 intervals가 주어집니다.

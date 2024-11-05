@@ -31,5 +31,6 @@ public class PasteStringAndPrint {
 
         // 문자열들은 + 를 통해 붙여서 출력할 수 있다.
         System.out.println(a+b);
+        sc.close();
     }
 }
