@@ -1,6 +1,7 @@
 package stepL;
 
 import java.util.Arrays;
+
 /**
  * 문제 설명
  * 정수 배열 arr와 query가 주어집니다.
@@ -33,11 +34,14 @@ import java.util.Arrays;
 public class SliceTheArray {
 
     public static void main(String[] args) {
-        for (int a : solution(new int[] {0, 1, 2, 3, 4, 5}, new int[] {4, 1, 2})) {
-            System.out.println(a);
+        for (int a : solution(new int[]{0, 1, 2, 3, 4, 5}, new int[]{4, 1, 2})) {
+            System.out.println(a); 
+        }
+        for (int a : solution(new int[]{0, 1, 2, 3, 4, 5}, new int[]{3, 1, 2})) {
+            System.out.println(a); 
         }
     }
-
+        
     private static int[] solution(int[] arr, int[] query) {
         int[] answer = {};
         for (int i = 0; i < query.length; i++) {
@@ -46,7 +50,7 @@ public class SliceTheArray {
             } else { // 홀수의 경우 앞 부분을 자름
                 // 5개의 arr 값, query[i]는 2의 값. query[i] 인덱스 부터 arr의 마지막까지의 길이는?
                 // 3개, 즉 arr 길이에서 인덱스의 값을 빼면 총 사이즈가 나온다.
-                arr = Arrays.copyOfRange(arr,query[i], arr.length - query[i] + 1);
+                arr = Arrays.copyOfRange(arr,query[i], arr.length + 1);
             }
         }
         answer = arr;
